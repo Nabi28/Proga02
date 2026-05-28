@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="DATA/DATA.csproj" Id="fd504c70-3755-4aa4-8746-398de8ebb86f" />
+  <Project Path="Entities/Entities.csproj" Id="0e39b468-d3c1-4e8f-820c-509c6efe7db6" />
   <Project Path="Progra 2/Progra 2.csproj" />
+  <Project Path="Services/Services.csproj" Id="643cdac1-8937-4a70-9820-575b94e6b6f8" />
 </Solution>
