@@ -5,9 +5,9 @@ namespace DATA
 {
     public static class DependencyContainer
     {
-        public static void RegisterServices(IServiceCollection services)
+        public static void AddDATA(this IServiceCollection services)
         {
-
+            services.AddScoped<RestauranteDbContext>();
         }
     }
 }

@@ -4,6 +4,7 @@ namespace Services.Interfaces
 {
     public interface ICliente
     {
+        public Cliente AddCliente(Cliente cliente);
         public List<Cliente> GetAllClientes();
         public Cliente GetClienteById(int clienteId);
         public Cliente CreateCliente(string nombre, string telefono, string correoElectronico);
