@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Services.Interfaces
+﻿namespace Services.Interfaces
 {
-    internal class ICliente
+    public class ICliente
     {
     }
 }
