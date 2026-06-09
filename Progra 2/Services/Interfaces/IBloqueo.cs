@@ -5,6 +5,7 @@ namespace Services.Interfaces
 {
     public interface Ibloqueo
     {
+        public Bloqueo AddBloqueo(Bloqueo bloqueo);
         public List<Bloqueo> GetAllBloqueos();
         public Bloqueo GetBloqueoById(int id);
         public Bloqueo CreateBloqueoMesa(BloqueoMesaDto dto);
