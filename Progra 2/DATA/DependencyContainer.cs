@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Entities;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DATA
 {
-    internal class DependencyContainer
+    public static class DependencyContainer
     {
+        public static void RegisterServices(IServiceCollection services)
+        {
+
+        }
     }
 }
