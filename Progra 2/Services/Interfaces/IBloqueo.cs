@@ -3,7 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Services.Interfaces
 {
-    public interface IBloqueoServicios
+    public interface Ibloqueo
     {
+
     }
 }
