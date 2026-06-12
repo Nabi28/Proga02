@@ -6,7 +6,8 @@ namespace DATA
     {
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Bloqueo> Bloqueos { get; set; }
-        
+        public DbSet<Seccion> Secciones { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=restaurante.db");
