@@ -10,6 +10,7 @@ namespace Services
             services.AddScoped<ICliente, ClienteServicios>();
             services.AddScoped<Ibloqueo, BloqueoServicios>();
             services.AddScoped<ISeccion, SeccionServicios>();
+            services.AddScoped<IZona, ZonaServicios>();
         }
     }
 }
