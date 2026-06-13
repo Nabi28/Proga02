@@ -3,9 +3,8 @@ using Entities;
 
 namespace Services.Interfaces
 {
-    public interface Ibloqueo
+    public interface IBloqueo
     {
-        public Bloqueo AddBloqueo(Bloqueo bloqueo);
         public List<Bloqueo> GetAllBloqueos();
         public Bloqueo GetBloqueoById(int id);
         public Bloqueo CreateBloqueoMesa(BloqueoMesaDTOs dto);

@@ -6,43 +6,60 @@ namespace Services
 {
     public class ClienteServicios : ICliente
     {
-        private readonly RestauranteDbContext _RestauranteDbContext;
-
-        public ClienteServicios(RestauranteDbContext context)
+        private readonly RestauranteDbContext _RestauranteDbcontext;
+        public ClienteServicios(RestauranteDbContext restauranteDbContext)
         {
-            _RestauranteDbContext = context;
+            _RestauranteDbcontext = restauranteDbContext;
         }
-
-        public Cliente AddCliente(Cliente cliente)
-        {
-            _RestauranteDbContext.Clientes.Add(cliente);
-            _RestauranteDbContext.SaveChanges();
-            return cliente;
-        }
-
         public Cliente CreateCliente(string nombre, string telefono, string correoElectronico)
         {
-            throw new NotImplementedException();
+            var cliente = new Cliente
+            {
+                Nombre = nombre,
+                Telefono = telefono,
+                CorreoElectronico = correoElectronico
+            };
+            _RestauranteDbcontext.Clientes.Add(cliente);
+            _RestauranteDbcontext.SaveChanges();
+            return cliente;
         }
 
         public void DeleteCliente(int clienteId)
         {
-            throw new NotImplementedException();
+            var result = _RestauranteDbcontext.Clientes.Find(clienteId);
+
+            if (result == null)
+                throw new Exception("Cliente no encontrado");
+
+            _RestauranteDbcontext.Clientes.Remove(result);
+            _RestauranteDbcontext.SaveChanges();
+
         }
 
         public List<Cliente> GetAllClientes()
         {
-            throw new NotImplementedException();
+            return _RestauranteDbcontext.Clientes.ToList();
         }
 
         public Cliente GetClienteById(int clienteId)
         {
-            throw new NotImplementedException();
+            var result = _RestauranteDbcontext.Clientes.Find(clienteId);
+            if (result == null)
+                throw new Exception("Cliente no encontrado");
+            return result;
         }
 
         public Cliente UpdateCliente(int clienteId, Cliente cliente)
         {
-            throw new NotImplementedException();
+            var result = _RestauranteDbcontext.Clientes.Find(clienteId);
+            if (result == null)
+                throw new Exception("Cliente no encontrado");
+
+            result.Nombre = cliente.Nombre;
+            result.Telefono = cliente.Telefono;
+            result.CorreoElectronico = cliente.CorreoElectronico;
+            _RestauranteDbcontext.SaveChanges();
+            return result;
         }
     }
 }
