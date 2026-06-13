@@ -11,6 +11,8 @@ namespace Services
             services.AddScoped<Ibloqueo, BloqueoServicios>();
             services.AddScoped<ISeccion, SeccionServicios>();
             services.AddScoped<IZona, ZonaServicios>();
+            services.AddScoped<IReserva, ReservaServicios>();
+            services.AddScoped<IMesa, MesaServicios>();
         }
     }
 }
