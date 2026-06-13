@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DTOs
 {
-    public class BloqueoMesaDto
+    public class BloqueoMesaDTOs
     {
         public int MesaId { get; set; }
         public DateTime FechaInicio { get; set; }

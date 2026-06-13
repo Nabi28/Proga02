@@ -7,26 +7,26 @@ namespace Services
 {
     public class BloqueoServicios : Ibloqueo
     {
-        private readonly RestauranteDbContext _RestauranteContext;
+        private readonly RestauranteDbContext _RestauranteDbContext;
 
         public BloqueoServicios(RestauranteDbContext context)
         {
-            _RestauranteContext = context;
+            _RestauranteDbContext = context;
         }
 
         public Bloqueo AddBloqueo(Bloqueo bloqueo)
         {
-            _RestauranteContext.Bloqueos.Add(bloqueo);
-            _RestauranteContext.SaveChanges();
+            _RestauranteDbContext.Bloqueos.Add(bloqueo);
+            _RestauranteDbContext.SaveChanges();
             return bloqueo;
         }
 
-        public Bloqueo CreateBloqueoMesa(BloqueoMesaDto dto)
+        public Bloqueo CreateBloqueoMesa(BloqueoMesaDTOs dto)
         {
             throw new NotImplementedException();
         }
 
-        public Bloqueo CreateBloqueoZona(BloqueoZonaDto dto)
+        public Bloqueo CreateBloqueoZona(BloqueoZonaDTOs dto)
         {
             throw new NotImplementedException();
         }

@@ -6,17 +6,17 @@ namespace Services
 {
     public class ClienteServicios : ICliente
     {
-        private readonly RestauranteDbContext _RestauranteContext;
+        private readonly RestauranteDbContext _RestauranteDbContext;
 
         public ClienteServicios(RestauranteDbContext context)
         {
-            _RestauranteContext = context;
+            _RestauranteDbContext = context;
         }
 
         public Cliente AddCliente(Cliente cliente)
         {
-            _RestauranteContext.Clientes.Add(cliente);
-            _RestauranteContext.SaveChanges();
+            _RestauranteDbContext.Clientes.Add(cliente);
+            _RestauranteDbContext.SaveChanges();
             return cliente;
         }
 

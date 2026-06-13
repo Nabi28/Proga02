@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DTOs
+﻿namespace DTOs
 {
-    public class BloqueoZonaDto
+    public class BloqueoZonaDTOs
     {
         public int ZonaId { get; set; }
         public DateTime FechaInicio { get; set; }
