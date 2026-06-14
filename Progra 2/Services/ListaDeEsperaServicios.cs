@@ -14,7 +14,7 @@ namespace Services
         }
 
 
-        public ListaDeEspera CreateListaDeEspera(ListaDeEsperaDto dto)
+        public ListaDeEspera CreateListaDeEspera(ListaDeEsperaDTOs dto)
         {
             var listaDeEspera = new ListaDeEspera
             {
