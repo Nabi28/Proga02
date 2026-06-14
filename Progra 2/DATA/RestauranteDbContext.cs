@@ -15,7 +15,17 @@ namespace DATA
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=restaurante.db");
+            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=Capa8;Trusted_Connection=True;TrustServerCertificate=True;");
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Deshabilitar cascade delete en todas las relaciones
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes()
+                .SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
         }
     }
+
 }
