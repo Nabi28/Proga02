@@ -10,5 +10,10 @@
         public DateTime Fecha { get; set; }
         public string Estado { get; set; }
 
+        //relationships - propiedades de navegación
+
+        public Mesa Mesa { get; set; }
+        public Reserva Reservas { get; set; }
+        public Horario Horario { get; set; }
     }
 }

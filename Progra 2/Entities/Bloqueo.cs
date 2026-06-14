@@ -10,7 +10,8 @@
         public string Estado { get; set; } = string.Empty;
         public string Motivo { get; set; } = string.Empty;
 
-        //relationships
+        //relationships - propiedades de navegación
         public Zona Zona { get; set; }
+        public Mesa Mesa { get; set; }
     }
 }

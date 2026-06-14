@@ -8,6 +8,13 @@ namespace Entities
         public int SeccionId { get; set; }
 
         //realtionships
+        public ICollection<Mesa> Mesas { get; set; }
         public ICollection<Bloqueo> Bloqueos { get; set; }
+        public ICollection<ListaDeEspera> ListasDeEsperas { get; set; }
+
+        //propiedad de navegación
+
+        public Seccion Seccion { get; set; }
+
     }
 }

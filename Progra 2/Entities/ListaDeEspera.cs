@@ -10,5 +10,9 @@
         public int NumPersonas { get; set; }
         public string Estado { get; set; }
 
+        //relationships - propiedades de navegación
+        public Zona Zona { get; set; }
+        public ListaDeEspera ListaDeEsperas { get; set; }
+        public Horario Horario { get; set; }
     }
 }
