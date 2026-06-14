@@ -8,4 +8,7 @@ public class Horario
     public TimeOnly HoraInicio { get; set; }
     public TimeOnly HoraFin { get; set; }
 
+    //relationships
+    public ICollection<Reserva> Reservas { get; set; }
+    public ICollection<ListaDeEspera> ListaDeEsperas { get; set; }
 }
