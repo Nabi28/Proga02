@@ -11,8 +11,13 @@ namespace Services
         {
             _RestauranteDbcontext = restauranteDbContext;
         }
-        public Zona CreateZona(Zona zona)
+        public Zona CreateZona(string nombre, int seccionId)
         {
+            var zona = new Zona
+            {
+                Nombre = nombre,
+                SeccionId = seccionId
+            };
             _RestauranteDbcontext.Zonas.Add(zona);
             _RestauranteDbcontext.SaveChanges();
             return zona;
