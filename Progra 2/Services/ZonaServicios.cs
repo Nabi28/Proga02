@@ -1,33 +1,48 @@
-﻿using Entities;
+﻿using DATA;
+using Entities;
 using Services.Interfaces;
 
 namespace Services
 {
     public class ZonaServicios : IZona
     {
-        public Zona CreateZona(string nombre, int seccionId)
+        private readonly RestauranteDbContext _RestauranteDbcontext;
+        public ZonaServicios(RestauranteDbContext restauranteDbContext)
         {
-            throw new NotImplementedException();
+            _RestauranteDbcontext = restauranteDbContext;
+        }
+        public Zona CreateZona(Zona zona)
+        {
+            _RestauranteDbcontext.Zonas.Add(zona);
+            _RestauranteDbcontext.SaveChanges();
+            return zona;
         }
 
-        public void DeleteZona(int zonaId)
+        public void DeleteZona(int ZonaId)
         {
-            throw new NotImplementedException();
+            var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
+            _RestauranteDbcontext.Zonas.Remove(result);
+            _RestauranteDbcontext.SaveChanges();
         }
 
         public List<Zona> GetAllZonas()
         {
-            throw new NotImplementedException();
+            return _RestauranteDbcontext.Zonas.ToList();
         }
 
-        public Zona GetZonaById(int id)
+        public Zona GetZonaById(int ZonaId)
         {
-            throw new NotImplementedException();
+            var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
+            return result;
         }
 
-        public Zona UpdateZona(int zonaId, Zona zona)
+        public Zona UpdateZona(int ZonaId, Zona zona)
         {
-            throw new NotImplementedException();
+            var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
+            result.Id = zona.Id;
+            _RestauranteDbcontext.Zonas.Update(result);
+            _RestauranteDbcontext.SaveChanges();
+            return result;
         }
     }
 }

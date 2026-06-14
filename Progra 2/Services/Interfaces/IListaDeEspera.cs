@@ -9,7 +9,7 @@ public interface IListaDeEspera
     public List<ListaDeEspera> GetAllListasDeEsperas();
     public ListaDeEspera GetListaDeEsperaById(int id);
     // writes
-    public ListaDeEspera CreateListaDeEspera(ListaDeEsperaDto dto);
+    public ListaDeEspera CreateListaDeEspera(ListaDeEsperaDTOs dto);
     public ListaDeEspera AtenderSiguienteEnLista(int horario, DateTime fecha, int zonaId);
     public ListaDeEspera CancelarEspera(int listaDeEsperaId);
 }

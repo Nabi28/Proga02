@@ -55,12 +55,12 @@ namespace Services
 
         public Bloqueo CreateBloqueoZona(BloqueoZonaDTOs dto)
         {
-            var zonaExiste = _RestauranteDbcontext.Zonas.Any(z => z.Id == dto.ZonaId);
+            var zonaExiste = _RestauranteDbcontext.Zonas.Any(z => z.Id == dto.Id);
             if (!zonaExiste)
                 throw new Exception("La zona no existe");
 
             var mesas = _RestauranteDbcontext.Mesas
-                .Where(mesa => mesa.ZonaId == dto.ZonaId)
+                .Where(mesa => mesa.ZonaId == dto.Id)
                 .ToList();
 
             foreach (var mesa in mesas)
@@ -70,7 +70,7 @@ namespace Services
 
             var bloqueo = new Bloqueo
             {
-                ZonaId = dto.ZonaId,
+                ZonaId = dto.Id,
                 FechaInicio = dto.FechaInicio,
                 FechaFin = dto.FechaFin,
                 Motivo = dto.Motivo,

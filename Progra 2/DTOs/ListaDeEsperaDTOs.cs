@@ -1,6 +1,6 @@
 ﻿namespace DTOs
 {
-    public class ListaDeEsperaDto
+    public class ListaDeEsperaDTOs
     {
         public int ClienteId { get; set; }
         public int HorarioId { get; set; }
