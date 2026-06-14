@@ -13,6 +13,8 @@ namespace Services
             services.AddScoped<IZona, ZonaServicios>();
             services.AddScoped<IReserva, ReservaServicios>();
             services.AddScoped<IMesa, MesaServicios>();
+            services.AddScoped<IListaDeEspera, ListaDeEsperaServicios>();
+            services.AddScoped<IHorario, HorarioServicios>();
         }
     }
 }

@@ -10,6 +10,8 @@ namespace DATA
         public DbSet<Zona> Zonas { get; set; }
         public DbSet<Reserva> Reservas { get; set; }
         public DbSet<Mesa> Mesas { get; set; }
+        public DbSet<ListaDeEspera> ListasDeEsperas { get; set; }
+        public DbSet<Horario> Horarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
